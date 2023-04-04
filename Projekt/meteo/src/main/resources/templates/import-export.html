@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="h-100" data-bs-theme="light" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meteo app</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+    <style>
+        .btn-light,
+        .btn-light:hover,
+        .btn-light:focus {
+            color: #333;
+            text-shadow: none;
+        }
+
+
+        body {
+            text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
+            box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+        }
+
+        .cover-container {
+            max-width: 42em;
+        }
+
+        .nav-masthead .nav-link {
+            color: rgba(255, 255, 255, .5);
+            border-bottom: .25rem solid transparent;
+        }
+
+        .nav-masthead .nav-link:hover,
+        .nav-masthead .nav-link:focus {
+            border-bottom-color: rgba(255, 255, 255, .25);
+        }
+
+        .nav-masthead .nav-link+.nav-link {
+            margin-left: 1rem;
+        }
+
+        .nav-masthead .active {
+            color: #fff;
+            border-bottom-color: #fff;
+        }
+    </style>
+</head>
+
+<body class="d-flex h-100 text-center text-bg-dark">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <div>
+                <h3 class="float-md-start mb-0">Meteo</h3>
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+                    <a class="nav-link fw-bold py-1 px-0" aria-current="page" href="#">Home</a>
+                    <a class="nav-link fw-bold py-1 px-0 active" href="#">Import/Export</a>
+                    <a class="nav-link fw-bold py-1 px-0" href="#">API</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="form-signin w-100">
+            <form method="post" action="/import" enctype="multipart/form-data">
+                <h1 class="h3 mb-3 fw-normal">Import data</h1>
+
+                <div class="mb-3">
+                    <input class="form-control" type="file" id="file" name="file">
+                </div>
+
+                <input class="w-100 btn btn-lg btn-primary" type="submit" value="Import" />
+            </form>
+
+            <form class="mt-3" method="post" action="/export" enctype="multipart/form-data">
+                <h1 class="h3 mb-3 fw-normal">Export data</h1>
+                <input class="w-100 btn btn-lg btn-primary" type="submit" value="Export" />
+            </form>
+        </main>
+        <footer class="mt-auto text-white-50">
+
+        </footer>
+    </div>
+</body>
+
+</html>
