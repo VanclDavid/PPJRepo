@@ -10,6 +10,7 @@ services:
       MARIADB_PASSWORD: "${MARIADB_PASSWORD}"
       MARIADB_PORT: "${MARIADB_PORT}"
       MARIADB_HOST: "${MARIADB_HOST}"
+      OPENWEATHER_API: "${OPENWEATHER_API}"
     ports:
       - "${METEO_PORT}:8080"
     volumes:

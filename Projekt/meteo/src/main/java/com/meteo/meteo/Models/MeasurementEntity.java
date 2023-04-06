@@ -15,20 +15,28 @@ public class MeasurementEntity {
     @JoinColumn(name = "state_fk", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
     private StateEntity state;
 
+    @Column(nullable = true)
     private String weatherMain;
 
+    @Column(nullable = true)
     private String weatherDescription;
 
+    @Column(nullable = true)
     private Double temperature;
 
+    @Column(nullable = true)
     private Integer humidity;
 
+    @Column(nullable = true)
     private Integer pressure;
 
+    @Column(nullable = true)
     private Double windSpeed;
 
+    @Column(nullable = true)
     private Double windDegree;
 
+    @Column(nullable = true)
     private Double clouds;
 
     private LocalDateTime saved;
@@ -103,5 +111,13 @@ public class MeasurementEntity {
 
     public void setWeatherMain(String weatherMmain) {
         this.weatherMain = weatherMmain;
+    }
+
+    public StateEntity getState() {
+        return state;
+    }
+
+    public void setState(StateEntity state) {
+        this.state = state;
     }
 }

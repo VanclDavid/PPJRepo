@@ -15,17 +15,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-import com.meteo.meteo.Repositories.MeasurementRepository;
-import com.meteo.meteo.Repositories.StateRepository;
+
+import com.meteo.meteo.Models.MeasurementEntity;
+import com.meteo.meteo.Models.StateEntity;
 import com.meteo.meteo.Utils.OpenWeatherApi;
 
 @Controller
 public class ImportExportController {
-    @Autowired
-    private StateRepository stateRepository;
 
     @Autowired
-    private MeasurementRepository measurementRepository;
+    private OpenWeatherApi openWeatherApi;
 
     @GetMapping("/import-export")
     public String importExportForm(ModelMap modelMap) {
@@ -37,12 +36,13 @@ public class ImportExportController {
 
     @PostMapping("/download")
     public String importSubmit(@RequestParam("town") String town, ModelMap modelMap) {
-        OpenWeatherApi weatherApi = new OpenWeatherApi();
-        weatherApi.setMeasurementRepository(measurementRepository);
-        weatherApi.setStateRepository(stateRepository);
-
-        weatherApi.download(town);
-        modelMap.addAttribute("resusltState", "OK");
+        try {
+            StateEntity stateEntity = openWeatherApi.downloadTown(town);
+            openWeatherApi.downloadMeasurement(stateEntity);
+            modelMap.addAttribute("resusltState", "OK");
+        } catch (Exception e) {
+            // TODO: LOG
+        }
 
         return "import-export";
     }

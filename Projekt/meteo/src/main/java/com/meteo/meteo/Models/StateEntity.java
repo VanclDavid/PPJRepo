@@ -6,13 +6,13 @@ import jakarta.persistence.*;
 @Table(name = "towns")
 public class StateEntity {
     @Id
-    @Column(nullable = false)
+    @Column(unique = true, nullable = false)
     private String name;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = true)
     private String state;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String country;
 
     @Column(nullable = false)
