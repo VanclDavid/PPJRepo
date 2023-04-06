@@ -15,14 +15,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
-
-import com.meteo.meteo.Models.MeasurementEntity;
 import com.meteo.meteo.Models.StateEntity;
 import com.meteo.meteo.Utils.OpenWeatherApi;
 
 @Controller
 public class ImportExportController {
-
     @Autowired
     private OpenWeatherApi openWeatherApi;
 
@@ -39,8 +36,11 @@ public class ImportExportController {
         try {
             StateEntity stateEntity = openWeatherApi.downloadTown(town);
             openWeatherApi.downloadMeasurement(stateEntity);
-            modelMap.addAttribute("resusltState", "OK");
+            modelMap.addAttribute("resultState", "success");
+            modelMap.addAttribute("resultMessage", "Successfuly downloaded and saved to DB");
         } catch (Exception e) {
+            modelMap.addAttribute("resultState", "danger");
+            modelMap.addAttribute("resultMessage", e.getMessage());
             // TODO: LOG
         }
 

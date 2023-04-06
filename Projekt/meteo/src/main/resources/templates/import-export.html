@@ -62,10 +62,11 @@
         </header>
 
         <main class="form-signin w-100">
-            <form class="mt-3" method="post" action="/download" enctype="multipart/form-data">
+            <form class="mb-3" method="post" action="/download" enctype="multipart/form-data">
                 <h1 class="h3 mb-3 fw-normal">Download data from OpenWeather</h1>
                 <div class="mb-3">
-                    <input class="form-control" type="text" id="town" name="town">
+                    <input class="form-control" type="text" id="town" name="town" placeholder="Write town name"
+                        required>
                 </div>
                 <input class="w-100 btn btn-lg btn-success" type="submit" value="Download" />
             </form>
@@ -87,6 +88,39 @@
         </main>
         <footer class="mt-auto text-white-50">
 
+            <div class="alert" style="position: absolute; right: 0; top: 0; margin: 25px; display: none;" role="alert"
+                id="alert">
+            </div>
+            <script th:inline="javascript">
+                /*<![CDATA[*/
+
+                var type = /*[[${resultState}]]*/ 'default';
+                var message = /*[[${resultMessage}]]*/ 'default';
+                console.log(message);
+
+                if (type ?? false) {
+                    let alertDiv = document.getElementById("alert");
+
+                    alertDiv.style.display = "";
+                    alertDiv.innerHTML = message;
+                    if (type == "success") {
+                        alertDiv.classList.add("alert-success");
+                    } else {
+                        alertDiv.classList.add("alert-danger");
+                    }
+
+                    setTimeout(() => {
+                        document.getElementById("alert").style.display = "none";
+                        if (type == "success") {
+                            alertDiv.classList.remove("alert-success");
+                        } else {
+                            alertDiv.classList.remove("alert-danger");
+                        }
+                    }, "5000");
+                }
+
+                /*]]>*/
+            </script>
         </footer>
     </div>
 </body>
