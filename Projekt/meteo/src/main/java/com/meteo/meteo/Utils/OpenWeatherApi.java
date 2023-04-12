@@ -35,6 +35,11 @@ public class OpenWeatherApi {
         }
 
         String data = this.fetch(new URL(String.format(townApiUrl, town, System.getenv("OPENWEATHER_API"))));
+
+        if (data.replace("[", "").replace("]", "").isEmpty()) {
+            throw new Exception(String.format("Entered town: %s not found in weather API.", town));
+        }
+
         JSONObject object = new JSONObject(data.replace("[", "").replace("]", ""));
 
         entity = new StateEntity();
@@ -42,7 +47,7 @@ public class OpenWeatherApi {
         entity.setCountry(this.getString(object, "country"));
         entity.setState(this.getString(object, "state"));
         entity.setLatitude(this.getDouble(object, "lat"));
-        entity.setLongitude(this.getDouble(object, "lat"));
+        entity.setLongitude(this.getDouble(object, "lon"));
 
         this.stateRepository.save(entity);
 
@@ -80,7 +85,9 @@ public class OpenWeatherApi {
         JSONObject clouds = (JSONObject) object.get("clouds");
         entity.setClouds(this.getDouble(clouds, "all"));
 
-        entity.setSaved(LocalDateTime.now());
+        LocalDateTime dateTime = LocalDateTime.now();
+        entity.setSaved(dateTime);
+        entity.setExpires(dateTime.plusDays(14));
 
         this.measurementRepository.save(entity);
 

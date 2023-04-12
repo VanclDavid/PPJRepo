@@ -1,0 +1,3 @@
+"state","weather_main","weather_description","temperature","humidity","pressure","wind_speed","wind_degree","clouds","saved","expires"
+"Rast","Clear","clear sky","282.19","69","1009","4.58","277.0","0.0","2023-04-12T19:30:50.668577","2023-04-26T19:30:50.668577"
+"Rust","Rain","moderate rain","283.08","83","1004","6.69","180.0","75.0","2023-04-12T19:32:32.345124","2023-04-26T19:32:32.345124"

@@ -1,8 +1,19 @@
 package com.meteo.meteo.Controllers;
 
+import java.beans.BeanInfo;
+import java.beans.Introspector;
+import java.beans.PropertyDescriptor;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicBoolean;
+
+import org.apache.commons.beanutils.PropertyUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.core.io.Resource;
@@ -15,18 +26,30 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
+import com.meteo.meteo.Models.MeasurementEntity;
 import com.meteo.meteo.Models.StateEntity;
+import com.meteo.meteo.Repositories.MeasurementRepository;
 import com.meteo.meteo.Utils.OpenWeatherApi;
+import com.opencsv.CSVWriter;
 
 @Controller
 public class ImportExportController {
     @Autowired
     private OpenWeatherApi openWeatherApi;
 
+    @Autowired
+    private MeasurementRepository measurementRepository;
+
     @GetMapping("/import-export")
     public String importExportForm(ModelMap modelMap) {
         modelMap.addAttribute("town", "");
         modelMap.addAttribute("file", null);
+
+        return "import-export";
+    }
+
+    @PostMapping("/remove-expired")
+    public String deleteSubmit(ModelMap modelMap) {
 
         return "import-export";
     }
@@ -59,8 +82,13 @@ public class ImportExportController {
     @PostMapping("/export")
     public ResponseEntity<Resource> exportSubmit() {
         try {
-            // TODO: load from DB
-            File file = new File("filename.txt");
+            List<String[]> csvData = loadMeasurementsFromDB();
+
+            CSVWriter writer = new CSVWriter(new FileWriter("export.csv"));
+            writer.writeAll(csvData);
+            writer.close();
+
+            File file = new File("export.csv");
             InputStreamResource resource = new InputStreamResource(new FileInputStream(file));
 
             HttpHeaders headers = new HttpHeaders();
@@ -75,10 +103,32 @@ public class ImportExportController {
                     .contentType(MediaType.APPLICATION_OCTET_STREAM)
                     .body(resource);
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             System.out.println("An error occurred.");
             e.printStackTrace();
         }
         return null;
+    }
+
+    private List<String[]> loadMeasurementsFromDB() throws Exception {
+        List<MeasurementEntity> measurementEntities = this.measurementRepository.findAll();
+
+        List<String[]> list = new ArrayList<>();
+        AtomicBoolean isHeaderSet = new AtomicBoolean(false);
+
+        if (!measurementEntities.isEmpty()) {
+            measurementEntities.forEach(entity -> {
+                if (!isHeaderSet.get()) {
+                    ArrayList<String> header = entity.getHeader();
+                    list.add(header.toArray(new String[header.size()]));
+                    isHeaderSet.set(true);
+                }
+
+                ArrayList<String> record = entity.getData();
+                list.add(record.toArray(new String[record.size()]));
+            });
+        }
+
+        return list;
     }
 }

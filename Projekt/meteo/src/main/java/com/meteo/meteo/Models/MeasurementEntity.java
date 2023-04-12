@@ -1,16 +1,14 @@
 package com.meteo.meteo.Models;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "measurements")
 public class MeasurementEntity {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", updatable = false, nullable = false)
-    private Integer id;
-
+    @PrimaryKeyJoinColumn
     @ManyToOne
     @JoinColumn(name = "state_fk", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
     private StateEntity state;
@@ -39,7 +37,18 @@ public class MeasurementEntity {
     @Column(nullable = true)
     private Double clouds;
 
+    @Id
     private LocalDateTime saved;
+
+    private LocalDateTime expires;
+
+    public LocalDateTime getExpires() {
+        return expires;
+    }
+
+    public void setExpires(LocalDateTime expires) {
+        this.expires = expires;
+    }
 
     public LocalDateTime getSaved() {
         return saved;
@@ -119,5 +128,41 @@ public class MeasurementEntity {
 
     public void setState(StateEntity state) {
         this.state = state;
+    }
+
+    public ArrayList<String> getHeader() {
+        ArrayList<String> list = new ArrayList<String>();
+
+        list.add("state");
+        list.add("weather_main");
+        list.add("weather_description");
+        list.add("temperature");
+        list.add("humidity");
+        list.add("pressure");
+        list.add("wind_speed");
+        list.add("wind_degree");
+        list.add("clouds");
+        list.add("saved");
+        list.add("expires");
+
+        return list;
+    }
+
+    public ArrayList<String> getData() {
+        ArrayList<String> list = new ArrayList<String>();
+
+        list.add((state != null) ? state.getName() : "");
+        list.add((weatherMain != null) ? weatherMain : "");
+        list.add((weatherDescription != null) ? weatherDescription : "");
+        list.add((temperature != null) ? temperature.toString() : "");
+        list.add((humidity != null) ? humidity.toString() : "");
+        list.add((pressure != null) ? pressure.toString() : "");
+        list.add((windSpeed != null) ? windSpeed.toString() : "");
+        list.add((windDegree != null) ? windDegree.toString() : "");
+        list.add((clouds != null) ? clouds.toString() : "");
+        list.add((saved != null) ? saved.toString() : "");
+        list.add((expires != null) ? expires.toString() : "");
+
+        return list;
     }
 }
