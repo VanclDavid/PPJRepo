@@ -97,11 +97,14 @@ public class ImportExportController {
             headers.add("Pragma", "no-cache");
             headers.add("Expires", "0");
 
-            return ResponseEntity.ok()
+            ResponseEntity<Resource> response = ResponseEntity.ok()
                     .headers(headers)
                     .contentLength(file.length())
                     .contentType(MediaType.APPLICATION_OCTET_STREAM)
                     .body(resource);
+
+            file.delete();
+            return response;
 
         } catch (Exception e) {
             System.out.println("An error occurred.");
