@@ -11,6 +11,7 @@ services:
       MARIADB_PORT: "${MARIADB_PORT}"
       MARIADB_HOST: "${MARIADB_HOST}"
       OPENWEATHER_API: "${OPENWEATHER_API}"
+      EXPIRATION_IN_DAYS: "${EXPIRATION_IN_DAYS}"
     ports:
       - "${METEO_PORT}:8080"
     volumes:

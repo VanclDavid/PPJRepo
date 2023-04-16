@@ -46,18 +46,6 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
-
-    <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css"
-        rel="stylesheet">
-
-    <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js">
-        </script>
 </head>
 
 <body class="d-flex h-100 text-center text-bg-dark">
@@ -67,7 +55,7 @@
                 <h3 class="float-md-start mb-0">Meteo</h3>
                 <nav class="nav nav-masthead justify-content-center float-md-end">
                     <a class="nav-link fw-bold py-1 px-0" aria-current="page" href="/">Home</a>
-                    <a class="nav-link fw-bold py-1 px-0 active" href="#">Import/Export</a>
+                    <a class="nav-link fw-bold py-1 px-0 active" href="/import-export">Import/Export</a>
                     <a class="nav-link fw-bold py-1 px-0" href="#">API</a>
                 </nav>
             </div>
@@ -86,8 +74,13 @@
             <form method="post" action="/import" enctype="multipart/form-data">
                 <h1 class="h3 mb-3 fw-normal">Import data</h1>
 
-                <div class="mb-3">
+                <div class="mb-1">
                     <input class="form-control" type="file" id="file" name="file">
+                </div>
+
+                <div class="custom-control custom-checkbox mb-2">
+                    <input type="checkbox" class="custom-control-input" id="update" name="update">
+                    <label class="custom-control-label" for="update">Update import datetime and expiration date</label>
                 </div>
 
                 <input class="w-100 btn btn-lg btn-primary" type="submit" value="Import" />
@@ -100,16 +93,31 @@
 
             <form class="mt-3" method="post" action="/remove-expired" enctype="multipart/form-data">
                 <h1 class="h3 mb-3 fw-normal">Delete data</h1>
+                <h6 class="h6 mb-3 fw-normal"
+                    th:utext="'expiration period is ' + ${expiration} + ' days from insertion'"></h6>
 
                 <div style="isolation: isolate;">
-                    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+                    <script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
+
+                    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+                    <script
+                        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+
+                    <link rel="stylesheet"
+                        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
                     <div style="position: relative">
                         <input class="form-control" type="text" id="datetime" name="datetime"
                             placeholder="Select date and time or leave empty to delete expired" />
                     </div>
                     <script>
                         $('#datetime').datetimepicker({
-                            format: 'YYYY-M-d hh:mm:ss'
+                            format: 'YYYY-MM-DD hh:mm:ss'
                         });
                     </script>
                 </div>

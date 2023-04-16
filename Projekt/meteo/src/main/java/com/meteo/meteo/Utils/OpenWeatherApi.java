@@ -87,7 +87,7 @@ public class OpenWeatherApi {
 
         LocalDateTime dateTime = LocalDateTime.now();
         entity.setSaved(dateTime);
-        entity.setExpires(dateTime.plusDays(14));
+        entity.setExpires(dateTime.plusDays(Long.parseLong(System.getenv("EXPIRATION_IN_DAYS"))));
 
         this.measurementRepository.save(entity);
 
