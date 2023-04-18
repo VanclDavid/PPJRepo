@@ -1,0 +1,4 @@
+2023-04-18 19:35:14 ERROR CustomErrorController:26 - Error: 404 message: 
+2023-04-18 19:39:14 ERROR CustomErrorController:26 - Error: 404 message: 
+2023-04-18 19:50:03 WARN  LogUtil:19 - HTML ERROR: 404, URL: /dfshbvshbsw, descr: 
+2023-04-18 19:59:57 INFO  LogUtil:15 - Application started

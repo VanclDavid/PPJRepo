@@ -27,6 +27,9 @@ import com.opencsv.CSVWriter;
 @Service
 public class ImportExportUtil {
     @Autowired
+    private LogUtil logger;
+
+    @Autowired
     private MeasurementRepository measurementRepository;
 
     @Autowired
@@ -45,7 +48,7 @@ public class ImportExportUtil {
                         parseDataLine(e, !isHeaderSet.get(), update);
                         isHeaderSet.set(true);
                     } catch (Exception ex) {
-                        // TODO: log
+                        this.logger.logException(ex);
                     }
                 });
     }

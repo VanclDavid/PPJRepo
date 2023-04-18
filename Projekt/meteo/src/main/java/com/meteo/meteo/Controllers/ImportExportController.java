@@ -14,10 +14,14 @@ import com.meteo.meteo.Models.MeasurementEntity;
 import com.meteo.meteo.Models.StateEntity;
 import com.meteo.meteo.Utils.DBUtils;
 import com.meteo.meteo.Utils.ImportExportUtil;
+import com.meteo.meteo.Utils.LogUtil;
 import com.meteo.meteo.Utils.OpenWeatherApi;
 
 @Controller
 public class ImportExportController {
+    @Autowired
+    private LogUtil logger;
+
     @Autowired
     private OpenWeatherApi openWeatherApi;
 
@@ -44,7 +48,7 @@ public class ImportExportController {
                     String.format("Expired rows (%i) has been successfuly deleted.", data.size()));
         } catch (Exception e) {
             this.addResult(modelMap, "danger", e.getMessage());
-            // TODO: LOG
+            this.logger.logException(e);
         }
         return "import-export";
     }
@@ -59,7 +63,7 @@ public class ImportExportController {
             this.addResult(modelMap, "success", "Successfuly downloaded and saved to DB");
         } catch (Exception e) {
             this.addResult(modelMap, "danger", e.getMessage());
-            // TODO: LOG
+            this.logger.logException(e);
         }
 
         return "import-export";
@@ -76,7 +80,7 @@ public class ImportExportController {
             this.addResult(modelMap, "success", "Data successfuly imported to database.");
         } catch (Exception e) {
             this.addResult(modelMap, "danger", e.getMessage());
-            // TODO: LOG
+            this.logger.logException(e);
         }
 
         return "import-export";
