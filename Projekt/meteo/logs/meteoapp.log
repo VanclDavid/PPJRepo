@@ -2,3 +2,33 @@
 2023-04-18 19:39:14 ERROR CustomErrorController:26 - Error: 404 message: 
 2023-04-18 19:50:03 WARN  LogUtil:19 - HTML ERROR: 404, URL: /dfshbvshbsw, descr: 
 2023-04-18 19:59:57 INFO  LogUtil:15 - Application started
+2023-04-18 20:03:12 INFO  LogUtil:14 - Application started
+2023-04-18 20:22:41 INFO  LogUtil:14 - Application started
+2023-04-18 20:22:55 WARN  LogUtil:23 - HTML ERROR: 404, URL: /mfnhdnbdgnmgfdmnoldf, descr: 2023-04-18 20:24:22 WARN  LogUtil:23 - HTML ERROR: 404, URL: /mfnhdnbdgnmgfdmnoldf, descr: 
+2023-04-18 20:26:11 WARN  LogUtil:23 - HTML ERROR: 404, URL: /mfnh, descr: 
+2023-04-18 20:33:50 INFO  LogUtil:14 - Application started
+2023-04-18 20:34:05 WARN  LogUtil:23 - HTML ERROR: 404, URL: /mfnh, descr: 
+2023-04-18 20:44:06 INFO  LogUtil:14 - Application started
+2023-04-18 20:59:35 INFO  LogUtil:14 - Application started
+2023-04-18 20:59:40 WARN  LogUtil:23 - HTML ERROR: 404, URL: /mfnh, descr: 
+2023-04-18 21:05:38 INFO  LogUtil:14 - Application started
+2023-04-18 21:06:00 INFO  LogUtil:14 - Application started
+2023-04-18 21:07:23 INFO  LogUtil:14 - Application started
+2023-04-18 21:10:12 INFO  LogUtil:14 - Application started
+2023-04-18 21:17:25 INFO  LogUtil:14 - Application started
+2023-04-18 21:17:48 WARN  LogUtil:23 - HTML ERROR: 404, URL: /mfmnfmfdghnd, descr: 
+2023-04-18 21:17:49 WARN  LogUtil:23 - HTML ERROR: 404, URL: /http://localhost:9200/favicon.ico, descr: 
+2023-04-18 21:17:49 WARN  LogUtil:23 - HTML ERROR: 404, URL: /favicon.ico, descr: 
+2023-04-18 21:17:49 WARN  LogUtil:23 - HTML ERROR: 404, URL: /http://localhost:9200/favicon.ico, descr: 
+2023-04-18 21:24:11 INFO  LogUtil:14 - Application started
+2023-04-18 21:24:21 WARN  LogUtil:23 - HTML ERROR: 404, URL: /mfmnfmfdghnd, descr: 
+2023-04-18 21:24:22 WARN  LogUtil:23 - HTML ERROR: 404, URL: /favicon.ico, descr: 
+2023-04-18 21:24:22 WARN  LogUtil:23 - HTML ERROR: 404, URL: /http://localhost:9200/favicon.ico, descr: 
+2023-04-18 21:27:43 INFO  LogUtil:14 - Application started
+2023-04-18 21:29:21 WARN  LogUtil:23 - HTML ERROR: 404, URL: /mfmnfmfdghnd, descr: 
+2023-04-18 21:29:22 WARN  LogUtil:23 - HTML ERROR: 404, URL: /http://localhost:9200/favicon.ico, descr: 
+2023-04-18 21:29:22 WARN  LogUtil:23 - HTML ERROR: 404, URL: /favicon.ico, descr: 
+2023-04-18 21:33:18 INFO  LogUtil:14 - Application started
+2023-04-18 21:33:55 WARN  LogUtil:23 - HTML ERROR: 404, URL: /mfmnfmfdghnd, descr: 
+2023-04-18 21:33:56 WARN  LogUtil:23 - HTML ERROR: 404, URL: /http://localhost:9200/favicon.ico, descr: 
+2023-04-18 21:33:56 WARN  LogUtil:23 - HTML ERROR: 404, URL: /favicon.ico, descr: 
