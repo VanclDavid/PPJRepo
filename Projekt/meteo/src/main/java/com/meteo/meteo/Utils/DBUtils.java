@@ -15,7 +15,7 @@ public class DBUtils {
 
     public List<MeasurementEntity> deleteExpired(String datetime) {
         LocalDateTime expireLimit = LocalDateTime.now();
-        if (datetime != null) {
+        if (datetime != null && !datetime.isEmpty()) {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             expireLimit = LocalDateTime.parse(datetime, formatter);
         }

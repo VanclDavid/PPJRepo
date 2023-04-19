@@ -45,7 +45,7 @@ public class ImportExportController {
         try {
             List<MeasurementEntity> data = this.dbUtils.deleteExpired(datetime);
             this.addResult(modelMap, "success",
-                    String.format("Expired rows (%i) has been successfuly deleted.", data.size()));
+                    String.format("Expired rows (%s) has been successfuly deleted.", data.size()));
         } catch (Exception e) {
             this.addResult(modelMap, "danger", e.getMessage());
             this.logger.logException(e);
