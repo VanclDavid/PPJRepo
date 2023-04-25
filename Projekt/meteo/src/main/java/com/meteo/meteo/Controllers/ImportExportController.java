@@ -2,6 +2,7 @@ package com.meteo.meteo.Controllers;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -31,6 +32,9 @@ public class ImportExportController {
     @Autowired
     private ImportExportUtil importExportUtil;
 
+    @Value("${spring.mode.read-only}")
+    private Boolean readOnlyMode;
+
     @GetMapping("/import-export")
     public String importExportForm(ModelMap modelMap) {
         this.presetView(modelMap);
@@ -40,6 +44,10 @@ public class ImportExportController {
 
     @PostMapping("/remove-expired")
     public String deleteSubmit(@RequestParam(value = "datetime", required = false) String datetime, ModelMap modelMap) {
+        if (this.readOnlyMode) {
+            return this.readOnlyModeView(modelMap);
+        }
+
         this.presetView(modelMap);
 
         try {
@@ -55,6 +63,10 @@ public class ImportExportController {
 
     @PostMapping("/download")
     public String importSubmit(@RequestParam("town") String town, ModelMap modelMap) {
+        if (this.readOnlyMode) {
+            return this.readOnlyModeView(modelMap);
+        }
+
         this.presetView(modelMap);
 
         try {
@@ -73,6 +85,10 @@ public class ImportExportController {
     public String importSubmit(@RequestParam("file") MultipartFile file,
             @RequestParam(value = "update", required = false) Boolean update,
             ModelMap modelMap) {
+        if (this.readOnlyMode) {
+            return this.readOnlyModeView(modelMap);
+        }
+
         this.presetView(modelMap);
 
         try {
@@ -91,16 +107,24 @@ public class ImportExportController {
         try {
             return this.importExportUtil.exportCsv();
         } catch (Exception e) {
-            System.out.println("An error occurred.");
-            e.printStackTrace();
+            this.logger.logException(e);
         }
         return null;
+    }
+
+    private String readOnlyModeView(ModelMap modelMap) {
+        this.logger.logWarning("Accessing application api in read only mode.");
+
+        modelMap.addAttribute("errorCode", "500");
+        modelMap.addAttribute("errorMessage", "Application runs in read-only mode.");
+        return "error";
     }
 
     private void presetView(ModelMap modelMap) {
         modelMap.addAttribute("town", "");
         modelMap.addAttribute("file", null);
         modelMap.addAttribute("expiration", System.getenv("EXPIRATION_IN_DAYS"));
+        modelMap.addAttribute("read_only", this.readOnlyMode);
     }
 
     private void addResult(ModelMap modelMap, String status, String message) {

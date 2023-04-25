@@ -2,6 +2,8 @@ package com.meteo.meteo.Models;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import jakarta.persistence.*;
 
@@ -122,14 +124,21 @@ public class MeasurementEntity {
         this.weatherMain = weatherMmain;
     }
 
+    @JsonIgnore
     public StateEntity getState() {
         return state;
     }
 
+    public String getStateName() {
+        return state.getName();
+    }
+
+    @JsonProperty(value = "name")
     public void setState(StateEntity state) {
         this.state = state;
     }
 
+    @JsonIgnore
     public ArrayList<String> getHeader() {
         ArrayList<String> list = new ArrayList<String>();
 
@@ -148,6 +157,7 @@ public class MeasurementEntity {
         return list;
     }
 
+    @JsonIgnore
     public ArrayList<String> getData() {
         ArrayList<String> list = new ArrayList<String>();
 
