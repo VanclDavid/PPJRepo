@@ -193,3 +193,4 @@
 2023-05-02 18:59:42 INFO  MeteoApplication:13 - Application started
 2023-05-02 19:10:17 INFO  MeteoApplication:13 - Application started
 2023-05-02 19:10:49 ERROR LogUtil:19 - Exception: Entered town: Enum not found in weather API., StackTrace: [Ljava.lang.StackTraceElement;@3798c63c
+2023-05-02 20:02:18 INFO  MeteoApplication:13 - Application started
