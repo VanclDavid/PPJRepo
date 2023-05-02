@@ -47,7 +47,6 @@ public class ImportExportController {
         if (this.readOnlyMode) {
             return this.readOnlyModeView(modelMap);
         }
-
         this.presetView(modelMap);
 
         try {
@@ -66,7 +65,6 @@ public class ImportExportController {
         if (this.readOnlyMode) {
             return this.readOnlyModeView(modelMap);
         }
-
         this.presetView(modelMap);
 
         try {
@@ -88,7 +86,6 @@ public class ImportExportController {
         if (this.readOnlyMode) {
             return this.readOnlyModeView(modelMap);
         }
-
         this.presetView(modelMap);
 
         try {

@@ -1,0 +1,93 @@
+{
+    "states": [
+        {
+            "name": "Berlin",
+            "state": "",
+            "country": "DE",
+            "latitude": 52.5170365,
+            "longitude": 13.3888599
+        },
+        {
+            "name": "Brno",
+            "state": "Southeast",
+            "country": "CZ",
+            "latitude": 49.1922443,
+            "longitude": 16.6113382
+        },
+        {
+            "name": "London",
+            "state": "England",
+            "country": "GB",
+            "latitude": 51.5073219,
+            "longitude": -0.1276474
+        },
+        {
+            "name": "Prague",
+            "state": "Prague",
+            "country": "CZ",
+            "latitude": 50.0874654,
+            "longitude": 14.4212535
+        },
+        {
+            "name": "Rast",
+            "state": "",
+            "country": "RO",
+            "latitude": 43.8851672,
+            "longitude": 23.2813472
+        }
+    ],
+    "measurements": [
+        {
+            "weatherMain": "Clouds",
+            "weatherDescription": "broken clouds",
+            "temperature": 283.6,
+            "humidity": 57,
+            "pressure": 1022,
+            "windSpeed": 3.13,
+            "windDegree": 293.0,
+            "clouds": 75.0,
+            "saved": "2023-05-02T19:10:40.750193",
+            "expires": "2023-05-16T19:10:40.750193",
+            "stateName": "Berlin"
+        },
+        {
+            "weatherMain": "Clouds",
+            "weatherDescription": "overcast clouds",
+            "temperature": 289.04,
+            "humidity": 57,
+            "pressure": 1018,
+            "windSpeed": 6.69,
+            "windDegree": 95.0,
+            "clouds": 100.0,
+            "saved": "2023-05-02T19:10:43.287216",
+            "expires": "2023-05-16T19:10:43.287216",
+            "stateName": "Rast"
+        },
+        {
+            "weatherMain": "Clouds",
+            "weatherDescription": "few clouds",
+            "temperature": 285.0,
+            "humidity": 82,
+            "pressure": 1023,
+            "windSpeed": 5.14,
+            "windDegree": 350.0,
+            "clouds": 20.0,
+            "saved": "2023-05-02T19:10:45.761425",
+            "expires": "2023-05-16T19:10:45.761425",
+            "stateName": "Prague"
+        },
+        {
+            "weatherMain": "Rain",
+            "weatherDescription": "light rain",
+            "temperature": 285.43,
+            "humidity": 84,
+            "pressure": 1020,
+            "windSpeed": 3.6,
+            "windDegree": 30.0,
+            "clouds": 100.0,
+            "saved": "2023-05-02T19:10:56.639529",
+            "expires": "2023-05-16T19:10:56.639529",
+            "stateName": "Brno"
+        }
+    ]
+}

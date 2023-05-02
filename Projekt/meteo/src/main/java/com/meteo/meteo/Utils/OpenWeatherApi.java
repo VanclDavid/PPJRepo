@@ -14,7 +14,7 @@ import com.meteo.meteo.Repositories.MeasurementRepository;
 import com.meteo.meteo.Repositories.StateRepository;
 
 @Service
-public class OpenWeatherApi {
+public class OpenWeatherApi extends JsonHelper {
     public static String townApiUrl = "https://api.openweathermap.org/geo/1.0/direct?q=%s&limit=1&appid=%s";
     public static String measurementApiUrl = "https://api.openweathermap.org/data/2.5/weather?lat=%f&lon=%f&appid=%s";
 
@@ -111,26 +111,5 @@ public class OpenWeatherApi {
             scanner.close();
             return inline;
         }
-    }
-
-    private String getString(JSONObject object, String key) {
-        if (!object.has(key)) {
-            return "";
-        }
-        return object.getString(key);
-    }
-
-    private Double getDouble(JSONObject object, String key) {
-        if (!object.has(key)) {
-            return 0.0;
-        }
-        return object.getDouble(key);
-    }
-
-    private Integer getInteger(JSONObject object, String key) {
-        if (!object.has(key)) {
-            return 0;
-        }
-        return object.getInt(key);
     }
 }
