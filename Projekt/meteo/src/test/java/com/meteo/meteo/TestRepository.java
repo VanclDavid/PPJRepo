@@ -16,7 +16,7 @@ import com.meteo.meteo.Utils.DataLoader;
 @DataJpaTest
 @ActiveProfiles("test")
 @ComponentScan("com.meteo.meteo.Utils")
-public class RepositoryTest {
+public class TestRepository {
     @Autowired
     private StateRepository stateRepository;
 
@@ -29,7 +29,7 @@ public class RepositoryTest {
     }
 
     @Test
-    public void testDataExists() {
+    public void dataExistsTest() {
         StateEntity london = this.stateRepository.findByName("London");
         Assert.assertEquals("London", london.getName());
         Assert.assertEquals("England", london.getState());

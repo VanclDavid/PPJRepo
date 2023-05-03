@@ -194,3 +194,37 @@
 2023-05-02 19:10:17 INFO  MeteoApplication:13 - Application started
 2023-05-02 19:10:49 ERROR LogUtil:19 - Exception: Entered town: Enum not found in weather API., StackTrace: [Ljava.lang.StackTraceElement;@3798c63c
 2023-05-02 20:02:18 INFO  MeteoApplication:13 - Application started
+2023-05-03 21:05:03 INFO  MeteoApplication:13 - Application started
+2023-05-03 21:05:17 INFO  MeteoApplication:13 - Application started
+2023-05-03 21:05:30 INFO  MeteoApplication:13 - Application started
+2023-05-03 21:37:00 INFO  MeteoApplication:13 - Application started
+2023-05-03 21:37:14 WARN  LogUtil:23 - HTML ERROR: 404, URL: /api/, descr: 
+2023-05-03 21:37:19 WARN  LogUtil:23 - HTML ERROR: 400, URL: /api/addTown, descr: Required parameter 'town' is not present.
+2023-05-03 21:43:15 INFO  MeteoApplication:13 - Application started
+2023-05-03 21:43:17 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/addTown, descr: 
+2023-05-03 21:43:39 INFO  MeteoApplication:13 - Application started
+2023-05-03 21:43:40 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/addTown, descr: 
+2023-05-03 21:44:29 INFO  MeteoApplication:13 - Application started
+2023-05-03 21:45:43 INFO  MeteoApplication:13 - Application started
+2023-05-03 21:47:22 INFO  MeteoApplication:13 - Application started
+2023-05-03 21:47:26 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/addTown, descr: 
+2023-05-03 21:48:20 INFO  MeteoApplication:13 - Application started
+2023-05-03 21:49:16 INFO  MeteoApplication:13 - Application started
+2023-05-03 22:01:29 INFO  MeteoApplication:13 - Application started
+2023-05-03 22:01:36 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/editTown, descr: 
+2023-05-03 22:02:09 INFO  MeteoApplication:13 - Application started
+2023-05-03 22:02:10 INFO  LogUtil:11 - City Paris has been edited
+2023-05-03 22:03:09 INFO  LogUtil:11 - City Paris has been edited
+2023-05-03 22:05:18 WARN  LogUtil:23 - HTML ERROR: 404, URL: /api/deleteTown, descr: 
+2023-05-03 22:05:29 INFO  MeteoApplication:13 - Application started
+2023-05-03 22:05:33 WARN  LogUtil:23 - HTML ERROR: 404, URL: /api/deleteTown, descr: 
+2023-05-03 22:05:35 WARN  LogUtil:23 - HTML ERROR: 404, URL: /api/deleteTown, descr: 
+2023-05-03 22:06:01 INFO  MeteoApplication:13 - Application started
+2023-05-03 22:07:09 INFO  MeteoApplication:13 - Application started
+2023-05-03 22:07:11 INFO  LogUtil:11 - City Paris has been delted
+2023-05-03 22:08:09 INFO  MeteoApplication:13 - Application started
+2023-05-03 22:08:20 INFO  LogUtil:11 - City "Paris" has been delted
+2023-05-03 22:09:58 INFO  MeteoApplication:13 - Application started
+2023-05-03 22:10:12 WARN  LogUtil:23 - HTML ERROR: 404, URL: /api/listTown, descr: 
+2023-05-03 22:10:35 INFO  MeteoApplication:13 - Application started
+2023-05-03 22:10:53 INFO  LogUtil:11 - City Paris has been added
