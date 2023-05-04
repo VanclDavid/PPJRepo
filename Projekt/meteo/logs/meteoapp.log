@@ -283,3 +283,23 @@
 2023-05-04 13:04:07 INFO  MeteoApplication:13 - Application started
 2023-05-04 13:04:19 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been edited
 2023-05-04 13:04:34 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been delted
+2023-05-04 13:08:35 INFO  MeteoApplication:13 - Application started
+2023-05-04 13:09:00 INFO  MeteoApplication:13 - Application started
+2023-05-04 13:52:40 INFO  MeteoApplication:13 - Application started
+2023-05-04 13:53:03 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/statsMeasurement, descr: 
+2023-05-04 13:53:37 INFO  MeteoApplication:13 - Application started
+2023-05-04 13:53:42 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/statsMeasurement, descr: 
+2023-05-04 13:54:06 INFO  MeteoApplication:13 - Application started
+2023-05-04 13:54:07 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/statsMeasurement, descr: 
+2023-05-04 13:55:07 INFO  MeteoApplication:13 - Application started
+2023-05-04 13:55:08 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/statsMeasurement, descr: 
+2023-05-04 13:56:41 INFO  MeteoApplication:13 - Application started
+2023-05-04 13:56:46 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/statsMeasurement, descr: 
+2023-05-04 13:57:13 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/statsMeasurement, descr: 
+2023-05-04 13:58:49 INFO  MeteoApplication:13 - Application started
+2023-05-04 13:58:54 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/statsMeasurement, descr: 
+2023-05-04 13:59:11 INFO  MeteoApplication:13 - Application started
+2023-05-04 13:59:17 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/statsMeasurement, descr: 
+2023-05-04 13:59:36 INFO  MeteoApplication:13 - Application started
+2023-05-04 14:00:11 INFO  MeteoApplication:13 - Application started
+2023-05-04 14:00:47 INFO  MeteoApplication:13 - Application started

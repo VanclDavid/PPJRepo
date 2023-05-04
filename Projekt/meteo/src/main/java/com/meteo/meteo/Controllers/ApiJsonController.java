@@ -1,7 +1,7 @@
 package com.meteo.meteo.Controllers;
 
 import java.time.LocalDateTime;
-
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
-
 import com.meteo.meteo.Models.MeasurementEntity;
 import com.meteo.meteo.Models.StateEntity;
 import com.meteo.meteo.Repositories.MeasurementRepository;
@@ -265,6 +264,15 @@ public class ApiJsonController {
 
         JSONObject message = new JSONObject();
         message.put("message", String.format("Measurement (%s, %s) has been delted", town, dateTime));
+        return new ResponseEntity<>(message.toString(), HttpStatus.OK);
+    }
+
+    @RequestMapping(value = "/api/statsMeasurement", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public @ResponseBody ResponseEntity<?> statsMeasurement() {
+        JSONObject message = new JSONObject();
+        message.put("daily_stats", new JSONArray(measurementRepository.getDayStats()));
+        message.put("weekly_stats", new JSONArray(measurementRepository.getDayStats()));
+        message.put("fourteenDaysJson", new JSONArray(measurementRepository.getDayStats()));
         return new ResponseEntity<>(message.toString(), HttpStatus.OK);
     }
 
