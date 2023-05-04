@@ -228,3 +228,58 @@
 2023-05-03 22:10:12 WARN  LogUtil:23 - HTML ERROR: 404, URL: /api/listTown, descr: 
 2023-05-03 22:10:35 INFO  MeteoApplication:13 - Application started
 2023-05-03 22:10:53 INFO  LogUtil:11 - City Paris has been added
+2023-05-03 22:16:39 INFO  MeteoApplication:13 - Application started
+2023-05-04 10:55:23 INFO  MeteoApplication:13 - Application started
+2023-05-04 10:55:36 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/addMeasurement, descr: 
+2023-05-04 10:56:14 INFO  MeteoApplication:13 - Application started
+2023-05-04 11:05:22 INFO  MeteoApplication:13 - Application started
+2023-05-04 11:07:55 INFO  MeteoApplication:13 - Application started
+2023-05-04 11:08:20 INFO  LogUtil:11 - City Paris has been added
+2023-05-04 11:17:10 INFO  MeteoApplication:13 - Application started
+2023-05-04 11:17:19 INFO  LogUtil:11 - City Paris has been added
+2023-05-04 11:17:40 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/addMeasurement, descr: 
+2023-05-04 11:19:30 INFO  MeteoApplication:13 - Application started
+2023-05-04 11:19:52 INFO  MeteoApplication:13 - Application started
+2023-05-04 11:20:09 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/addMeasurement, descr: 
+2023-05-04 11:20:41 INFO  MeteoApplication:13 - Application started
+2023-05-04 11:25:33 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/addMeasurement, descr: 
+2023-05-04 11:26:15 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/addMeasurement, descr: 
+2023-05-04 11:26:45 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/addMeasurement, descr: 
+2023-05-04 11:26:47 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/addMeasurement, descr: 
+2023-05-04 11:27:58 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/addMeasurement, descr: 
+2023-05-04 11:29:05 INFO  LogUtil:11 - City Prague has been added
+2023-05-04 11:32:31 INFO  MeteoApplication:13 - Application started
+2023-05-04 11:37:21 INFO  MeteoApplication:13 - Application started
+2023-05-04 11:42:33 INFO  MeteoApplication:13 - Application started
+2023-05-04 11:45:43 INFO  MeteoApplication:13 - Application started
+2023-05-04 11:57:45 INFO  MeteoApplication:13 - Application started
+2023-05-04 12:00:33 INFO  MeteoApplication:13 - Application started
+2023-05-04 12:02:55 INFO  MeteoApplication:13 - Application started
+2023-05-04 12:07:03 INFO  MeteoApplication:13 - Application started
+2023-05-04 12:07:25 INFO  MeteoApplication:13 - Application started
+2023-05-04 12:07:40 INFO  MeteoApplication:13 - Application started
+2023-05-04 12:08:01 INFO  MeteoApplication:13 - Application started
+2023-05-04 12:09:18 INFO  MeteoApplication:13 - Application started
+2023-05-04 12:24:27 INFO  MeteoApplication:13 - Application started
+2023-05-04 12:25:07 INFO  MeteoApplication:13 - Application started
+2023-05-04 12:25:58 INFO  MeteoApplication:13 - Application started
+2023-05-04 12:27:13 INFO  MeteoApplication:13 - Application started
+2023-05-04 12:28:32 INFO  MeteoApplication:13 - Application started
+2023-05-04 12:29:06 INFO  LogUtil:11 - City Paris has been added
+2023-05-04 12:29:12 WARN  LogUtil:23 - HTML ERROR: 500, URL: /api/addMeasurement, descr: 
+2023-05-04 12:31:04 INFO  MeteoApplication:13 - Application started
+2023-05-04 12:31:37 INFO  LogUtil:11 - City Prague has been added
+2023-05-04 12:35:31 INFO  MeteoApplication:13 - Application started
+2023-05-04 12:35:34 WARN  LogUtil:23 - HTML ERROR: 405, URL: /download, descr: Method 'GET' is not supported.
+2023-05-04 12:35:43 WARN  LogUtil:23 - HTML ERROR: 404, URL: /api/listState, descr: 
+2023-05-04 12:36:08 INFO  MeteoApplication:13 - Application started
+2023-05-04 12:49:58 INFO  MeteoApplication:13 - Application started
+2023-05-04 12:50:14 INFO  MeteoApplication:13 - Application started
+2023-05-04 12:59:13 INFO  MeteoApplication:13 - Application started
+2023-05-04 12:59:20 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been edited
+2023-05-04 13:00:15 INFO  MeteoApplication:13 - Application started
+2023-05-04 13:00:17 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been edited
+2023-05-04 13:00:55 INFO  LogUtil:11 - Measurement (Prague, 2023-05-04T11:27:47.639464840) has been edited
+2023-05-04 13:04:07 INFO  MeteoApplication:13 - Application started
+2023-05-04 13:04:19 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been edited
+2023-05-04 13:04:34 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been delted

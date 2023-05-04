@@ -133,12 +133,12 @@
         }
 
         function loadStates() {
-            fetch("list-states");
+            fetch("api/listMeasurement");
             setActive(1);
         }
 
         function loadMeasurements() {
-            fetch("list-measurements");
+            fetch("api/listTown");
             setActive(2);
         }
 

@@ -4,16 +4,13 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "measurements")
 public class MeasurementEntity {
-    @PrimaryKeyJoinColumn
-    @ManyToOne
-    @JoinColumn(name = "state_fk", foreignKey = @ForeignKey(name = "none", value = ConstraintMode.NO_CONSTRAINT))
-    private StateEntity state;
+    @EmbeddedId
+    private MeasurementId id;
 
     @Column(nullable = true)
     private String weatherMain;
@@ -39,9 +36,6 @@ public class MeasurementEntity {
     @Column(nullable = true)
     private Double clouds;
 
-    @Id
-    private LocalDateTime saved;
-
     private LocalDateTime expires;
 
     public LocalDateTime getExpires() {
@@ -53,11 +47,14 @@ public class MeasurementEntity {
     }
 
     public LocalDateTime getSaved() {
-        return saved;
+        return id.getSaved();
     }
 
     public void setSaved(LocalDateTime saved) {
-        this.saved = saved;
+        if (id == null) {
+            id = new MeasurementId();
+        }
+        id.setSaved(saved);
     }
 
     public Double getClouds() {
@@ -125,17 +122,20 @@ public class MeasurementEntity {
     }
 
     @JsonIgnore
-    public StateEntity getState() {
-        return state;
+    public String getState() {
+        return id.getState();
     }
 
     public String getStateName() {
-        return state.getName();
+        return id.getState();
     }
 
     @JsonProperty(value = "name")
     public void setState(StateEntity state) {
-        this.state = state;
+        if (id == null) {
+            id = new MeasurementId();
+        }
+        id.setState(state.getName());
     }
 
     @JsonIgnore
@@ -161,7 +161,7 @@ public class MeasurementEntity {
     public ArrayList<String> getData() {
         ArrayList<String> list = new ArrayList<String>();
 
-        list.add((state != null) ? state.getName() : "");
+        list.add((id.getState() != null) ? id.getState() : "");
         list.add((weatherMain != null) ? weatherMain : "");
         list.add((weatherDescription != null) ? weatherDescription : "");
         list.add((temperature != null) ? temperature.toString() : "");
@@ -170,7 +170,7 @@ public class MeasurementEntity {
         list.add((windSpeed != null) ? windSpeed.toString() : "");
         list.add((windDegree != null) ? windDegree.toString() : "");
         list.add((clouds != null) ? clouds.toString() : "");
-        list.add((saved != null) ? saved.toString() : "");
+        list.add((id.getSaved() != null) ? id.getSaved().toString() : "");
         list.add((expires != null) ? expires.toString() : "");
 
         return list;
