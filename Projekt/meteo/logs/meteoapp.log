@@ -395,3 +395,20 @@
 2023-05-10 11:17:43 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
 2023-05-10 11:19:45 INFO  LogUtil:11 - City Paris has been added
 2023-05-10 11:19:45 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 16:27:08 INFO  LogUtil:11 - City Berlin has been edited
+2023-05-10 16:27:08 INFO  LogUtil:11 - Measurement (Berlin, 2023-05-02T19:10:40.750193) has been edited
+2023-05-10 16:27:49 INFO  LogUtil:11 - City Berlin has been delted
+2023-05-10 16:27:49 INFO  LogUtil:11 - Measurement (Berlin, 2023-05-02T19:10:40.750193) has been delted
+2023-05-10 16:28:01 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 16:28:01 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 16:28:01 INFO  LogUtil:11 - City Berlin has been edited
+2023-05-10 16:28:01 INFO  LogUtil:11 - Measurement (Berlin, 2023-05-02T19:10:40.750193) has been edited
+2023-05-10 16:28:01 INFO  LogUtil:11 - City Berlin has been delted
+2023-05-10 16:28:01 INFO  LogUtil:11 - Measurement (Berlin, 2023-05-02T19:10:40.750193) has been delted
+2023-05-10 16:34:52 INFO  MeteoApplication:13 - Application started
+2023-05-10 16:42:42 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 16:42:42 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 16:42:42 INFO  LogUtil:11 - City Berlin has been edited
+2023-05-10 16:42:42 INFO  LogUtil:11 - Measurement (Berlin, 2023-05-02T19:10:40.750193) has been edited
+2023-05-10 16:42:42 INFO  LogUtil:11 - City Berlin has been delted
+2023-05-10 16:42:42 INFO  LogUtil:11 - Measurement (Berlin, 2023-05-02T19:10:40.750193) has been delted

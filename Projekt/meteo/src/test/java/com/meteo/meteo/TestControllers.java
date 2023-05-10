@@ -102,34 +102,30 @@ public class TestControllers {
 
     @Test
     public void editTownAndMeasurementTest() throws Exception {
-        addTownWithMeasurementTest(); // TODO FIX
+        fetchData("/api/editTown?town=Berlin&state=upravenahodnota&longitude=22.3200410217200766");
 
-        fetchData("/api/editTown?town=Paris&state=upravenahodnota&longitude=22.3200410217200766");
-
-        StateEntity state = this.stateRepository.findByName("Paris");
+        StateEntity state = this.stateRepository.findByName("Berlin");
         Assert.assertEquals("upravenahodnota", state.getState());
         Assert.assertEquals((Double) 22.3200410217200766, state.getLongitude());
 
-        fetchData("/api/editMeasurement?town=Paris&temperature=555.55&saved=2023-05-04T11:27:47.639465");
+        fetchData("/api/editMeasurement?town=Berlin&temperature=555.55&saved=2023-05-02T19:10:40.750193");
 
         MeasurementEntity measurementEntity = this.measurementRepository
-                .findById(LocalDateTime.parse("2023-05-04T11:27:47.639465"), "Paris");
+                .findById(LocalDateTime.parse("2023-05-02T19:10:40.750193"), "Berlin");
         Assert.assertEquals((Double) 555.55, measurementEntity.getTemperature());
     }
 
     @Test
     public void deleteTownAndMeasurement() throws Exception {
-        addTownWithMeasurementTest(); // TODO FIX
+        fetchData("/api/deleteTown?town=Berlin");
 
-        fetchData("/api/deleteTown?town=Paris");
-
-        StateEntity state = this.stateRepository.findByName("Paris");
+        StateEntity state = this.stateRepository.findByName("Berlin");
         Assert.assertNull(state);
 
-        fetchData("/api/deleteMeasurement?town=Paris&saved=2023-05-04T11:27:47.639465");
+        fetchData("/api/deleteMeasurement?town=Berlin&saved=2023-05-02T19:10:40.750193");
 
         MeasurementEntity measurementEntity = this.measurementRepository
-                .findById(LocalDateTime.parse("2023-05-04T11:27:47.639465"), "Paris");
+                .findById(LocalDateTime.parse("2023-05-02T19:10:40.750193"), "Berlin");
         Assert.assertNull(measurementEntity);
     }
 }

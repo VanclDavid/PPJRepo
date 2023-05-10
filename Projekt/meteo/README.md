@@ -1,1 +1,11 @@
-# Meteo App
+# Popis zdrojových souborů a struktury aplikace
+- Aplikace používá mvn pro manipulaci s balíčky, viz [HELP.md](HELP.md)
+- Vychází ze závislostí aplikace, které jsou definované v pom.xml
+- Ve složce logs jsou umístěny logy z apliace. (Aktuálně jsou uvnitř uloženy ukázky z vývoje)
+- Složka target obsahuje zkompilované soubory aplikace a výsledný balíček .jar
+- Samotné zdrojáky jsou v [/src](src/)
+    - Ta je dále rozdělená na [test](src/test), zde jsou testy pro aplikaci. Používá se dočasná DB H2 a datová sada v souboru .json
+    - Složka [main](src/main) má reousrce, kde je nastavení aplikace a statické soubory (html,icons,properties)
+    - Složka [java](src/java), kde je logická struktura aplikace
+- Aplikace nemá pouze webové rozhraní, ale také API vracející data v podobě JSON.
+    - K tomuto api jsou dostupné ukázky v souboru [README-API.md](README-API.md)

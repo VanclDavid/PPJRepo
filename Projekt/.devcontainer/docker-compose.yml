@@ -1,0 +1,46 @@
+version: '3.8'
+services:
+  meteo:
+    image: mcr.microsoft.com/devcontainers/java:0-17
+    environment:
+      WATCHPACK_POLLING: "true"
+      MARIADB_ROOT_PASSWORD: "${MARIADB_ROOT_PASSWORD}"
+      MARIADB_DATABASE: "${MARIADB_DATABASE}"
+      MARIADB_USER: "${MARIADB_USER}"
+      MARIADB_PASSWORD: "${MARIADB_PASSWORD}"
+      MARIADB_PORT: "${MARIADB_PORT}"
+      MARIADB_HOST: "${MARIADB_HOST}"
+      OPENWEATHER_API: "${OPENWEATHER_API}"
+      EXPIRATION_IN_DAYS: "${EXPIRATION_IN_DAYS}"
+      METEO_CRON_ENABLED: ${METEO_CRON_ENABLED}
+      METEO_CRON_INTERVAL: "${METEO_CRON_INTERVAL}"
+      READ_ONLY_MODE: "${READ_ONLY_MODE}"
+    ports:
+      - "${METEO_PORT}:8080"
+    volumes:
+      - ../meteo:/meteo
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
+  mariadb:
+    image: mariadb:10.7.8
+    ports:
+      - "${MARIADB_PORT}:3306"
+    environment:
+      MARIADB_ROOT_PASSWORD: "${MARIADB_ROOT_PASSWORD}"
+      MARIADB_DATABASE: "${MARIADB_DATABASE}"
+      MARIADB_USER: "${MARIADB_USER}"
+      MARIADB_PASSWORD: "${MARIADB_PASSWORD}"
+    volumes:
+      - mariadb_data:/var/lib/mysql
+    restart: unless-stopped
+  adminer:
+    image: adminer:4.8.1
+    ports:
+      - "${ADMINER_PORT}:8080"
+    environment:
+      ADMINER_DESIGN: "hydra"
+      ADMINER_DEFAULT_SERVER: mariadb
+    restart: unless-stopped
+volumes:
+  mariadb_data:
