@@ -25,7 +25,7 @@ public class DataLoader extends JsonHelper {
     public void loadData(String filename) {
         try {
             ClassLoader classLoader = getClass().getClassLoader();
-            File file = new File(classLoader.getResource("states.json").getFile());
+            File file = new File(classLoader.getResource(String.format("%s.json", filename)).getFile());
 
             String content = new String(Files.readAllBytes(file.toPath()));
             JSONObject data = new JSONObject(content);

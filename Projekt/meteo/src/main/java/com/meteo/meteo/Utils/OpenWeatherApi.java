@@ -40,18 +40,20 @@ public class OpenWeatherApi extends JsonHelper {
             throw new Exception(String.format("Entered town: %s not found in weather API.", town));
         }
 
+        return saveDownloadedTownFromJSON(data);
+    }
+
+    public StateEntity saveDownloadedTownFromJSON(String data) {
         JSONObject object = new JSONObject(data.replace("[", "").replace("]", ""));
 
-        entity = new StateEntity();
+        StateEntity entity = new StateEntity();
         entity.setName(this.getString(object, "name"));
         entity.setCountry(this.getString(object, "country"));
         entity.setState(this.getString(object, "state"));
         entity.setLatitude(this.getDouble(object, "lat"));
         entity.setLongitude(this.getDouble(object, "lon"));
 
-        this.stateRepository.save(entity);
-
-        return entity;
+        return this.stateRepository.save(entity);
     }
 
     public MeasurementEntity downloadMeasurement(StateEntity state) throws Exception {
@@ -64,6 +66,10 @@ public class OpenWeatherApi extends JsonHelper {
                 state.getLongitude(),
                 System.getenv("OPENWEATHER_API"))));
 
+        return saveDownloadedMeasurementFromJSON(data, state);
+    }
+
+    public MeasurementEntity saveDownloadedMeasurementFromJSON(String data, StateEntity state) {
         JSONObject object = new JSONObject(data);
         MeasurementEntity entity = new MeasurementEntity();
 
@@ -89,9 +95,7 @@ public class OpenWeatherApi extends JsonHelper {
         entity.setSaved(dateTime);
         entity.setExpires(dateTime.plusDays(Long.parseLong(System.getenv("EXPIRATION_IN_DAYS"))));
 
-        this.measurementRepository.save(entity);
-
-        return entity;
+        return this.measurementRepository.save(entity);
     }
 
     private String fetch(URL url) throws Exception {

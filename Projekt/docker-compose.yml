@@ -21,6 +21,7 @@ services:
       - ./meteo:/meteo
     stdin_open: true
     tty: true
+    restart: unless-stopped
   mariadb:
     image: mariadb:10.7.8
     ports:

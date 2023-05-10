@@ -111,6 +111,17 @@ public class ImportExportUtil {
         return response;
     }
 
+    public InputStreamResource fileCsvData() throws Exception {
+        List<String[]> csvData = this.loadMeasurementsFromDB();
+
+        CSVWriter writer = new CSVWriter(new FileWriter("export.csv"));
+        writer.writeAll(csvData);
+        writer.close();
+
+        File file = new File("export.csv");
+        return new InputStreamResource(new FileInputStream(file));
+    }
+
     private List<String[]> loadMeasurementsFromDB() throws Exception {
         List<MeasurementEntity> measurementEntities = this.measurementRepository.findAll();
 

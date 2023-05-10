@@ -77,6 +77,19 @@
             "stateName": "Prague"
         },
         {
+            "weatherMain": "Clouds",
+            "weatherDescription": "few clouds",
+            "temperature": 275.0,
+            "humidity": 62,
+            "pressure": 1028,
+            "windSpeed": 5.14,
+            "windDegree": 340.0,
+            "clouds": 15.0,
+            "saved": "2023-05-03T19:10:45.761425",
+            "expires": "2023-05-17T19:10:45.761425",
+            "stateName": "Prague"
+        },
+        {
             "weatherMain": "Rain",
             "weatherDescription": "light rain",
             "temperature": 285.43,

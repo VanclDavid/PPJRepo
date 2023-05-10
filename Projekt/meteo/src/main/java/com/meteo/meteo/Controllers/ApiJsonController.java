@@ -148,7 +148,8 @@ public class ApiJsonController {
             @RequestParam(name = "pressure", required = true) Integer pressure,
             @RequestParam(name = "windSpeed", required = true) Double windSpeed,
             @RequestParam(name = "windDegree", required = true) Double windDegree,
-            @RequestParam(name = "clouds", required = true) Double clouds) {
+            @RequestParam(name = "clouds", required = true) Double clouds,
+            @RequestParam(name = "saved", required = false) String saved) {
         if (this.readOnlyMode) {
             return this.readOnlyModeView();
         }
@@ -171,7 +172,12 @@ public class ApiJsonController {
         entity.setWindDegree(windDegree);
         entity.setClouds(clouds);
 
-        LocalDateTime dt = LocalDateTime.now();
+        LocalDateTime dt;
+        if (saved != null) {
+            dt = LocalDateTime.parse(saved);
+        } else {
+            dt = LocalDateTime.now();
+        }
         entity.setSaved(dt);
         entity.setExpires(dt.plusDays(Long.parseLong(System.getenv("EXPIRATION_IN_DAYS"))));
         this.measurementRepository.save(entity);
@@ -188,7 +194,7 @@ public class ApiJsonController {
     @RequestMapping(value = "/api/editMeasurement", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody ResponseEntity<?> editMeasurement(
             @RequestParam(name = "town", required = true) String town,
-            @RequestParam(name = "dateTime", required = true) String dateTime,
+            @RequestParam(name = "saved", required = true) String saved,
             @RequestParam(name = "weather", required = false) String weather,
             @RequestParam(name = "description", required = false) String description,
             @RequestParam(name = "temperature", required = false) Double temperature,
@@ -201,10 +207,10 @@ public class ApiJsonController {
             return this.readOnlyModeView();
         }
 
-        MeasurementEntity measurementEntity = this.measurementRepository.findById(LocalDateTime.parse(dateTime), town);
+        MeasurementEntity measurementEntity = this.measurementRepository.findById(LocalDateTime.parse(saved), town);
         if (ObjectUtils.isEmpty(measurementEntity)) {
             JSONObject message = new JSONObject();
-            message.put("message", String.format("There measurement for town %s at %s", town, dateTime));
+            message.put("message", String.format("There measurement for town %s at %s", town, saved));
             return new ResponseEntity<>(message.toString(), HttpStatus.BAD_REQUEST);
         }
 
@@ -236,9 +242,15 @@ public class ApiJsonController {
             measurementEntity.setClouds(clouds);
         }
 
+        if (saved != null) {
+            measurementEntity.setSaved(LocalDateTime.parse(saved));
+        } else {
+            measurementEntity.setSaved(LocalDateTime.now());
+        }
+
         measurementEntity.setExpires(LocalDateTime.now().plusDays(Long.parseLong(System.getenv("EXPIRATION_IN_DAYS"))));
         this.measurementRepository.save(measurementEntity);
-        this.logger.log(String.format("Measurement (%s, %s) has been edited", town, dateTime));
+        this.logger.log(String.format("Measurement (%s, %s) has been edited", town, saved));
 
         return new ResponseEntity<>(measurementEntity, HttpStatus.OK);
     }
@@ -246,24 +258,24 @@ public class ApiJsonController {
     @RequestMapping(value = "/api/deleteMeasurement", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
     public @ResponseBody ResponseEntity<?> deleteMeasurement(
             @RequestParam(name = "town", required = true) String town,
-            @RequestParam(name = "dateTime", required = true) String dateTime) {
+            @RequestParam(name = "saved", required = true) String saved) {
 
         if (this.readOnlyMode) {
             return this.readOnlyModeView();
         }
 
-        MeasurementEntity measurementEntity = this.measurementRepository.findById(LocalDateTime.parse(dateTime), town);
+        MeasurementEntity measurementEntity = this.measurementRepository.findById(LocalDateTime.parse(saved), town);
         if (ObjectUtils.isEmpty(measurementEntity)) {
             JSONObject message = new JSONObject();
-            message.put("message", String.format("There measurement for town %s at %s", town, dateTime));
+            message.put("message", String.format("There measurement for town %s at %s", town, saved));
             return new ResponseEntity<>(message.toString(), HttpStatus.BAD_REQUEST);
         }
 
         this.measurementRepository.delete(measurementEntity);
-        this.logger.log(String.format("Measurement (%s, %s) has been delted", town, dateTime));
+        this.logger.log(String.format("Measurement (%s, %s) has been delted", town, saved));
 
         JSONObject message = new JSONObject();
-        message.put("message", String.format("Measurement (%s, %s) has been delted", town, dateTime));
+        message.put("message", String.format("Measurement (%s, %s) has been delted", town, saved));
         return new ResponseEntity<>(message.toString(), HttpStatus.OK);
     }
 

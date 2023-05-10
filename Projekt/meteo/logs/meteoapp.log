@@ -303,3 +303,95 @@
 2023-05-04 13:59:36 INFO  MeteoApplication:13 - Application started
 2023-05-04 14:00:11 INFO  MeteoApplication:13 - Application started
 2023-05-04 14:00:47 INFO  MeteoApplication:13 - Application started
+2023-05-10 04:49:05 INFO  MeteoApplication:13 - Application started
+2023-05-10 04:49:59 INFO  MeteoApplication:13 - Application started
+2023-05-10 04:56:44 INFO  MeteoApplication:13 - Application started
+2023-05-10 05:00:15 INFO  MeteoApplication:13 - Application started
+2023-05-10 05:19:51 INFO  MeteoApplication:13 - Application started
+2023-05-10 05:27:52 INFO  MeteoApplication:13 - Application started
+2023-05-10 06:50:51 INFO  MeteoApplication:13 - Application started
+2023-05-10 06:51:09 ERROR LogUtil:19 - Exception: Entered town: Enum not found in weather API., StackTrace: [Ljava.lang.StackTraceElement;@49aaf19d
+2023-05-10 06:51:16 ERROR LogUtil:19 - Exception: InputStream resource [resource loaded through InputStream] cannot be resolved to absolute file path, StackTrace: [Ljava.lang.StackTraceElement;@22143b1f
+2023-05-10 06:51:16 WARN  LogUtil:23 - HTML ERROR: 404, URL: /favicon.ico, descr: 
+2023-05-10 06:52:03 INFO  MeteoApplication:13 - Application started
+2023-05-10 06:53:27 INFO  MeteoApplication:13 - Application started
+2023-05-10 06:53:38 ERROR LogUtil:19 - Exception: InputStream resource [resource loaded through InputStream] cannot be resolved to absolute file path, StackTrace: [Ljava.lang.StackTraceElement;@7b1e25d9
+2023-05-10 06:54:00 INFO  MeteoApplication:13 - Application started
+2023-05-10 06:54:05 ERROR LogUtil:19 - Exception: InputStream resource [resource loaded through InputStream] cannot be resolved to absolute file path, StackTrace: [Ljava.lang.StackTraceElement;@7071693a
+2023-05-10 07:16:32 INFO  MeteoApplication:13 - Application started
+2023-05-10 07:28:09 INFO  MeteoApplication:13 - Application started
+2023-05-10 07:50:01 INFO  MeteoApplication:13 - Application started
+2023-05-10 07:57:11 INFO  MeteoApplication:13 - Application started
+2023-05-10 07:57:44 INFO  MeteoApplication:13 - Application started
+2023-05-10 08:04:05 INFO  MeteoApplication:13 - Application started
+2023-05-10 08:57:42 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 09:03:37 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 09:03:38 INFO  LogUtil:11 - Measurement (Paris, 2023-05-10T09:03:38.068871500) has been added
+2023-05-10 09:51:03 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 09:51:03 INFO  LogUtil:11 - Measurement (Paris, 2023-05-10T09:51:03.336720233) has been added
+2023-05-10 09:51:03 INFO  LogUtil:11 - City Paris has been edited
+2023-05-10 10:04:38 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 10:04:38 INFO  LogUtil:11 - Measurement (Paris, 2023-05-10T10:04:38.139436504) has been added
+2023-05-10 10:04:38 INFO  LogUtil:11 - City Paris has been edited
+2023-05-10 10:04:52 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 10:04:52 INFO  LogUtil:11 - Measurement (Paris, 2023-05-10T10:04:52.528238977) has been added
+2023-05-10 10:04:52 INFO  LogUtil:11 - City Paris has been edited
+2023-05-10 10:06:05 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 10:06:05 INFO  LogUtil:11 - Measurement (Paris, 2023-05-10T10:06:05.559777532) has been added
+2023-05-10 10:06:05 INFO  LogUtil:11 - City Paris has been edited
+2023-05-10 10:09:56 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 10:09:56 INFO  LogUtil:11 - Measurement (Paris, 2023-05-10T10:09:56.209103860) has been added
+2023-05-10 10:12:55 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 10:12:55 INFO  LogUtil:11 - Measurement (Paris, 2023-05-10T10:12:55.809292400) has been added
+2023-05-10 10:14:50 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 10:14:50 INFO  LogUtil:11 - Measurement (Paris, 2023-05-10T10:14:50.186146220) has been added
+2023-05-10 10:15:44 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 10:15:44 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 10:16:30 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 10:16:30 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 10:17:28 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 10:17:28 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 10:17:41 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 10:17:41 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 10:17:41 INFO  LogUtil:11 - City Paris has been edited
+2023-05-10 10:18:06 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 10:18:06 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 10:18:06 INFO  LogUtil:11 - City Paris has been edited
+2023-05-10 10:18:50 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 10:18:50 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 10:18:50 INFO  LogUtil:11 - City Paris has been edited
+2023-05-10 10:19:05 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 10:19:05 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 10:19:05 INFO  LogUtil:11 - City Paris has been edited
+2023-05-10 10:19:25 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 10:19:25 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 10:19:25 INFO  LogUtil:11 - City Paris has been edited
+2023-05-10 10:20:19 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 10:20:19 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 10:20:19 INFO  LogUtil:11 - City Paris has been edited
+2023-05-10 10:22:40 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 10:22:40 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 10:22:40 INFO  LogUtil:11 - City Paris has been edited
+2023-05-10 10:22:40 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639465) has been edited
+2023-05-10 10:28:58 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 10:28:58 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 10:28:58 INFO  LogUtil:11 - City Paris has been delted
+2023-05-10 10:28:58 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639465) has been delted
+2023-05-10 11:08:15 INFO  LogUtil:11 - City Prague has been delted
+2023-05-10 11:13:37 INFO  MeteoApplication:13 - Application started
+2023-05-10 11:14:39 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 11:14:39 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 11:15:01 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 11:15:01 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 11:15:25 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 11:15:25 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 11:15:50 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 11:15:50 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 11:15:50 INFO  LogUtil:11 - City Paris has been edited
+2023-05-10 11:15:50 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639465) has been edited
+2023-05-10 11:15:58 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 11:15:58 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 11:17:43 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 11:17:43 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
+2023-05-10 11:19:45 INFO  LogUtil:11 - City Paris has been added
+2023-05-10 11:19:45 INFO  LogUtil:11 - Measurement (Paris, 2023-05-04T11:27:47.639464840) has been added
